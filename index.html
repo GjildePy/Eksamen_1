@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brukerstøtte - Tips & Triks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>IT-Brukerstøtte</h1>
+        <p>Enkle løsninger på vanlige problemer</p>
+    </header>
+
+    <main>
+
+        <div class="tips-kort">
+            <h2>🔑 Hvordan bytte passord</h2>
+            <p>Hvis du har glemt passordet ditt eller bare vil bytte det av sikkerhetsgrunner, gjør du følgende:</p>
+            <ol>
+                <li>Gå til innstillinger på profilen din.</li>
+                <li>Trykk på fanen som heter <strong>Sikkerhet</strong> eller <strong>Konto</strong>.</li>
+                <li>Velg "Endre passord".</li>
+                <li>Skriv inn ditt gamle passord én gang, og det nye passordet to ganger.</li>
+                <li>Klikk på <strong>Lagre</strong>.</li>
+            </ol>
+        </div>
+
+        <div class="tips-kort">
+            <h2>🌐 Internett virker ikke?</h2>
+            <p>Opplever du at nettet er tregt eller borte? Prøv disse tre enkle stegene før du ringe support:</p>
+            <ol>
+                <li>Sjekk om Wi-Fi-knappen på PC-en eller mobilen faktisk er skrudd på.</li>
+                <li>Skru Wi-Fi av og på igjen på enheten din.</li>
+                <li>Hvis det ikke hjelper: Trekk ut strøkbabelen på ruteren, vent i 10 sekunder, og sett den inn igjen.</li>
+            </ol>
+        </div>
+
+        <div class="tips-kort">
+            <h2>🖨️ Printeren vil ikke skrive ut</h2>
+            <p>Når printeren streiker, skyldes det ofte småting:</p>
+            <ol>
+                <li>Sjekk at det faktisk er nok papir i skuffen.</li>
+                <li>Se etter feilmeldinger eller blinkende lys på selve printeren.</li>
+                <li>Sjekk "Utskriftskøen" på PC-en dein for å se om et gammelt dokument har låst seg.</li>
+            </ol>
+        </div>
+
+        <div class="tips-kort">
+            <h2>Finner du ikke problemet ditt?</h2>
+            <p>Skriv det her, så hjelper vi deg:</p>
+            
+            <form onsubmit="sendRapport(event)">
+                <textarea id="problemTekst" placeholder="Skriv her..." required></textarea>
+                <br>
+                <button type="submit">Rapporter problem</button>
+            </form>
+        </div>
+
+    </main>
+
+    <script>
+        function sendRapport(event) {
+            event.preventDefault(); // Stopper siden fra å hoppe til en ny hvit side
+            
+            const tekst = document.getElementById('problemTekst').value;
+
+            // Sender teksten til serveren i bakgrunnen
+            fetch('/rapporter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'problemMelding=' + encodeURIComponent(tekst)
+            });
+
+            // Gir en fin notifikasjon på skjermen
+            alert("Takk! Rapporten din er mottatt.");
+            
+            // Tømmer tekstboksen etterpå
+            document.getElementById('problemTekst').value = "";
+        }
+    </script>
+
+</body>
+</html>

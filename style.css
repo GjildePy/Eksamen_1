@@ -1,0 +1,63 @@
+/* CSS: Bestemmer hvordan nettsiden ser ut */
+
+/* Enkel nullstilling og fontvalg */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Toppteksten (Header) */
+header {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Hovedområdet som holder innholdet samlet på midten */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* En boks (kort) for hvert IT-problem */
+.tips-kort {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Overskriftene inni hvert tips */
+.tips-kort h2 {
+    color: #0056b3;
+    margin-top: 0;
+}
+
+/* Stegene i listene */
+ol {
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Gjør tekstboksen bred og gir litt avstand til knappen */
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Gir knappen litt farge så den synes */
+button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+}
