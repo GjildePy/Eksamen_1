@@ -24,10 +24,11 @@ app.post('/rapporter', (req, res) => {
 
 // Starter serveren på port 3000
 //app.listen(3000, () => {
-//    console.log("Serveren kjører på http://localhost:3000");
-//});
-
-const PORT = 3000;
 app.listen(PORT, '0.0.0.0', () => {
-    console.log("Serveren kjører! Gå til http://<din-pi-ip>:{PORT}");
+    console.log("Serveren kjører på http://192.168.1.80:3000");
 });
+
+//const PORT = 3000;
+//app.listen(PORT, '0.0.0.0', () => {
+//    console.log("Serveren kjører! Gå til http://<din-pi-ip>:{PORT}");
+//});
