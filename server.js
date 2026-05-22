@@ -23,8 +23,8 @@ app.post('/rapporter', (req, res) => {
 });
 
 // Starter serveren på port 3000
-app.listen(80, () => {
-    console.log("Serveren kjører på http://192.168.20.164:443");
+app.listen(3000, () => {
+    console.log("Serveren kjører på http://192.168.20.164");
 });
 
 
